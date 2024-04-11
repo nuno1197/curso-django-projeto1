@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-#from django.shortcuts import render
+from django.shortcuts import render
 
 #HTTP REQUEST <- HTTP RESPONSE
 
@@ -7,7 +7,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    return HttpResponse("HOME")
+    return render(request , 'recipes/home.html', context={
+        'name' : 'Nuno Silva'
+    })
     #return HTTP RESPONSE
 
 
