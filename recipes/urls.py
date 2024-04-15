@@ -1,7 +1,7 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
 from django.http import HttpResponse
-from recipes.views import home
+from . import views
 
 #HTTP REQUEST <- HTTP RESPONSE
 
@@ -10,5 +10,6 @@ from recipes.views import home
 
 #dominio/recipes/
 urlpatterns = [
-    path('', home), # Home
+    path('', views.home), # home
+    path ('recipes/<int:id>/', views.recipe),
 ]
