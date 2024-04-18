@@ -7,9 +7,13 @@ from . import views
 
 #HTTP REQUEST
 
+#recipes:recipe
+app_name = 'recipes'
+
 
 #dominio/recipes/
 urlpatterns = [
-    path('', views.home), # home
-    path ('recipes/<int:id>/', views.recipe),
+    path('', views.home, name="home"), # home
+    path ('recipes/<int:id>/', views.recipe, name="recipe"),
+
 ]
